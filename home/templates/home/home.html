@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+<head>
+        <link rel="stylesheet" href="{% static 'home/style.css' %}">
+
+    <title>Cornered Wisdom</title>
+
+  
+</head>
+
+<body>
+
+    <h1>Cornered Wisdom</h1>
+
+    {% for quote in quotes %}
+
+        <blockquote>
+            “{{ quote.text }}”
+        </blockquote>
+
+        <p class="book">
+            — <strong>{{ quote.book.title }}</strong>,
+            {{ quote.book.author }}
+        </p>
+
+    {% endfor %}
+
+</body>
+</html>
