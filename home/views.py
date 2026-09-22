@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Quote
 
-# Create your views here.
-def my_blog(request):
-    return HttpResponse("Hello, blog!")
 
-def my_home(request):
-    return HttpResponse("Hello, reader!")
+def home(request):
+    quotes = Quote.objects.filter(user=request.user)
+    return render(request, "home/home.html", {
+        "quotes": quotes
+    })

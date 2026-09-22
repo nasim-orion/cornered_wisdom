@@ -1,0 +1,62 @@
+# Book Quote Website
+
+## User Stories & Acceptance Criteria
+
+### Project Overview
+
+The website will allow users to create an account, securely log in, and store their favourite quotes from books. Users will be able to manage their saved quotes and randomly shuffle through their collection.
+
+---
+
+# MoSCoW Prioritisation
+
+| Priority        | User Story           |
+| --------------- | -------------------- |
+| **Must Have**   | User Registration    |
+| **Must Have**   | User Login/Logout    |
+| **Must Have**   | Add a Quote          |
+| **Must Have**   | View Saved Quotes    |
+| **Must Have**   | Edit a Quote         |
+| **Must Have**   | Delete a Quote       |
+| **Should Have** | Shuffle Quotes       |
+| **Could Have**  | User Profile         |
+| **Could Have**  | Tags/Categories      |
+| **Could Have**  | Public Quote Sharing |
+
+---
+
+# Must Have
+
+## 1. User Registration
+
+**User Story:**
+As a new user, I want to create an account so that I can securely store and access my favourite book quotes.
+
+**Acceptance Criteria:**
+
+* The user can enter a username, email address, and password.
+* The system validates that all required fields have been completed.
+* The system validates that the email address is in a valid format.
+* The password meets the website's minimum password requirements.
+* The system prevents registration using an email address that is already registered.
+* A successful registration creates a new user account.
+* The user receives confirmation that their account has been created.
+* The user can then log in using their new credentials.
+
+---
+
+## 2. User Login and Logout
+
+**User Story:**
+As a registered user, I want to log in securely so that I can access my saved quotes.
+
+**Acceptance Criteria:**
+
+* The user can enter their email/username and password.
+* The system checks the submitted credentials against the stored account.
+* Correct credentials allow the user to access their account.
+* Incorrect credentials display an appropriate error message.
+* The user cannot access protected pages without being authenticated.
+* A successful login creates an authenticated session.
+* The user can log out of their account.
+* Logging out preven
