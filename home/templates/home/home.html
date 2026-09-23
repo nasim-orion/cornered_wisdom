@@ -15,11 +15,11 @@
     <h1>Cornered Wisdom</h1>
 
     <!-- shuffle button -->
-<a href="{% url 'shuffle' %}">
+<a href="?shuffle=1">
     <button type="button">Shuffle</button>
 </a>`
 
-    {% for quote in quotes %}
+  {% if quote %}
 
         <blockquote>
             “{{ quote.text }}”
@@ -30,7 +30,11 @@
             {{ quote.book.author }}
         </p>
 
-    {% endfor %}
+    {% else %}
+
+        <p>You don't have any quotes yet.</p>
+
+    {% endif %} 
 
 </body>
 </html>
