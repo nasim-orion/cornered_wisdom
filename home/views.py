@@ -10,15 +10,10 @@ def home(request):
 
     if request.GET.get("shuffle"):
         quote = quotes.order_by("?").first()
+    else:
+        quote = quotes.first()
 
     return render(request, "home/home.html", {
         "quotes": quotes,
         "quote": quote,
-    })
-
-def shuffle(request):
-    quote = Quote.objects.filter(user=request.user).order_by("?").first()
-
-    return render(request, "home/shuffle.html", {
-        "quote": quote
     })
