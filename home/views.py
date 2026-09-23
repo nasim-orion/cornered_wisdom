@@ -11,7 +11,7 @@ def home(request):
     if request.GET.get("shuffle"):
         quote = quotes.order_by("?").first()
     else:
-        quote = quotes.first()
+        quote = quotes.order_by("?").first()
 
     return render(request, "home/home.html", {
         "quotes": quotes,

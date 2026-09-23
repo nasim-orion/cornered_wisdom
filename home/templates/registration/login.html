@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login — Cornered Wisdom</title>
+</head>
+
+<body>
+
+    <h1>Log in to Cornered Wisdom</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Log in</button>
+    </form>
+
+</body>
+</html>
