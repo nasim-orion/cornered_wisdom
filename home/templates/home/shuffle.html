@@ -1,0 +1,18 @@
+{% if quote %}
+
+    <blockquote>
+        “{{ quote.text }}”
+    </blockquote>
+
+    <p class="book">
+        — <strong>{{ quote.book.title }}</strong>,
+        {{ quote.book.author }}
+    </p>
+
+{% else %}
+
+    <p>You don't have any quotes yet.</p>
+
+{% endif %}
+
+<a href="{% url 'home' %}">Back to my quotes</a>
