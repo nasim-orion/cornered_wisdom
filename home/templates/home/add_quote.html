@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Your Quote — Cornered Wisdom</title>
+</head>
+
+<body>
+
+    <h1>Add a Quote</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Quote:</label>
+        <textarea name="text"></textarea>
+
+        <br><br>
+
+        <label>Book title:</label>
+        <input type="text" name="book_title">
+
+        <br><br>
+
+        <label>Author:</label>
+        <input type="text" name="author">
+
+        <br><br>
+
+        <label>Page number:</label>
+        <input type="number" name="page_number">
+
+        <br><br>
+
+        <label>Notes:</label>
+        <textarea name="notes"></textarea>
+
+        <br><br>
+
+        <button type="submit">Add Quote</button>
+    </form>
+
+</body>
+</html>

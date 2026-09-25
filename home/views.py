@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Quote
+from .models import Quote, Book
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 
@@ -37,3 +37,24 @@ def register(request):
     return render(request, "registration/register.html", {
         "form": form
     })
+
+
+@login_required
+def add_quote(request):
+    if request.method == "POST":
+        book = Book.objects.create(
+            title=request.POST["book_title"],
+            author=request.POST["author"]
+        )
+
+        Quote.objects.create(
+            user=request.user,
+            book=book,
+            text=request.POST["text"],
+            page_number=request.POST["page_number"],
+            notes=request.POST["notes"]
+        )
+
+        return redirect("home")
+
+    return render(request, "home/add_quote.html")
