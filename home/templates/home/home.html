@@ -12,6 +12,13 @@
 
 <body>
 
+    <!-- Logout button -->
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+</form>
+
+
     <h1>Cornered Wisdom</h1>
 
     <!-- shuffle button -->
