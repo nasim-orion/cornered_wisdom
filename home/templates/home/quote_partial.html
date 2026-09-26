@@ -1,0 +1,16 @@
+{% if quote %}
+
+    <blockquote>
+        “{{ quote.text }}”
+    </blockquote>
+
+    <p class="book">
+        — <strong>{{ quote.book.title }}</strong>,
+        {{ quote.book.author }}
+    </p>
+
+{% else %}
+
+    <p>Your quotes will appear here.</p>
+
+{% endif %}

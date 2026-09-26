@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from home.views import home, register, add_quote, my_quotes, edit_quote, delete_quote
+from home.views import home, register, add_quote, my_quotes, edit_quote, delete_quote, shuffle_quote
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns = [
     path('my-quotes/', my_quotes, name='my_quotes'),
     path('edit-quote/<int:quote_id>/', edit_quote, name='edit_quote'),
     path('delete-quote/<int:quote_id>/', delete_quote, name='delete_quote'),
+    path('shuffle-quote/', shuffle_quote, name='shuffle_quote'),
  
 
 ]

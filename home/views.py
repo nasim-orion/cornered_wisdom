@@ -8,19 +8,12 @@ from django.contrib.auth.forms import UserCreationForm
 def home(request):
 
     quotes = Quote.objects.filter(user=request.user)
-
-    quote = None
-
-    if request.GET.get("shuffle"):
-        quote = quotes.order_by("?").first()
-    else:
-        quote = quotes.order_by("?").first()
+    quote = quotes.order_by("?").first()
 
     return render(request, "home/home.html", {
         "quotes": quotes,
         "quote": quote,
     })
-
 
 def register(request):
 
@@ -85,6 +78,24 @@ def my_quotes(request):
         "quotes": quotes,
         "sort": sort
     })
+
+
+@login_required
+def shuffle_quote(request):
+    quotes = Quote.objects.filter(user=request.user)
+    quote = quotes.order_by("?").first()
+
+    if quote:
+        return render(request, "home/quote_partial.html", {
+            "quote": quote
+        })
+
+    return render(request, "home/quote_partial.html", {
+        "quote": None
+    })
+
+
+
 
 @login_required
 def edit_quote(request, quote_id):
