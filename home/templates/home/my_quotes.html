@@ -9,6 +9,7 @@
     <h1>My Quotes</h1>
 
     {% for quote in quotes %}
+    
 
         <blockquote>
             “{{ quote.text }}”
@@ -26,7 +27,7 @@
         {% if quote.notes %}
             <p>{{ quote.notes }}</p>
         {% endif %}
-
+        <a href="{% url 'edit_quote' quote.id %}">Edit</a>
         <hr>
 
     {% empty %}

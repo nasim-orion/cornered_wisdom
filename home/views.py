@@ -60,6 +60,8 @@ def add_quote(request):
     return render(request, "home/add_quote.html")
 
 
+
+
 @login_required
 def my_quotes(request):
     quotes = Quote.objects.filter(user=request.user)
@@ -67,3 +69,24 @@ def my_quotes(request):
     return render(request, "home/my_quotes.html", {
         "quotes": quotes
     })
+
+@login_required
+def edit_quote(request, quote_id):
+    quote = Quote.objects.get(id=quote_id, user=request.user)
+
+    if request.method == "POST":
+        quote.text = request.POST["text"]
+        quote.book.title = request.POST["book_title"]
+        quote.book.author = request.POST["author"]
+        quote.page_number = request.POST["page_number"] if request.POST["page_number"] else None
+        quote.notes = request.POST["notes"]
+
+        quote.book.save()
+        quote.save()
+
+        return redirect("my_quotes")
+
+    return render(request, "home/edit_quote.html", {
+        "quote": quote
+    })
+
