@@ -82,7 +82,8 @@ def my_quotes(request):
 
 
     return render(request, "home/my_quotes.html", {
-        "quotes": quotes
+        "quotes": quotes,
+        "sort": sort
     })
 
 @login_required
