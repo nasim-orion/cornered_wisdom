@@ -58,3 +58,12 @@ def add_quote(request):
         return redirect("home")
 
     return render(request, "home/add_quote.html")
+
+
+@login_required
+def my_quotes(request):
+    quotes = Quote.objects.filter(user=request.user)
+
+    return render(request, "home/my_quotes.html", {
+        "quotes": quotes
+    })
