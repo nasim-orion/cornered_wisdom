@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Your Quotes Here — Cornered Wisdom</title>
+</head>
+
+<body>
+
+    <h1>Edit A Quote</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Quote:</label>
+        <textarea name="text">{{ quote.text }}</textarea>
+
+        <br><br>
+
+        <label>Book title:</label>
+        <input type="text" name="book_title" value="{{ quote.book.title }}">
+
+        <br><br>
+
+        <label>Author:</label>
+        <input type="text" name="author" value="{{ quote.book.author }}">
+
+        <br><br>
+
+        <label>Page number:</label>
+        <input type="number" name="page_number" value="{{ quote.page_number|default_if_none:'' }}">
+
+        <br><br>
+
+        <label>Notes:</label>
+        <textarea name="notes">{{ quote.notes }}</textarea>
+
+        <br><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <br>
+
+    <a href="{% url 'my_quotes' %}">Cancel</a>
+
+</body>
+</html>
