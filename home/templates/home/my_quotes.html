@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Quotes — Cornered Wisdom</title>
+</head>
+
+<body>
+
+    <h1>My Quotes</h1>
+
+    {% for quote in quotes %}
+
+        <blockquote>
+            “{{ quote.text }}”
+        </blockquote>
+
+        <p>
+            — <strong>{{ quote.book.title }}</strong>,
+            {{ quote.book.author }}
+        </p>
+
+        {% if quote.page_number %}
+            <p>Page {{ quote.page_number }}</p>
+        {% endif %}
+
+        {% if quote.notes %}
+            <p>{{ quote.notes }}</p>
+        {% endif %}
+
+        <hr>
+
+    {% empty %}
+
+        <p>You haven't added any quotes yet.</p>
+
+    {% endfor %}
+
+    <a href="{% url 'add_quote' %}">Add Quote</a>
+
+    <br><br>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+
+</body>
+</html>
