@@ -28,9 +28,8 @@
     {% include 'home/quote_partial.html' %}
     </div> 
         <!-- shuffle button -->
-<a href="?shuffle=1">
-    <button type="button">Shuffle</button>
-</a>`
+<button id="shuffle-button" type="button">Shuffle</button>
+
     <a href="{% url 'add_quote' %}">Add Quote</a>
     <br><br>
      <a href="{% url 'my_quotes' %}">View Saved Quotes</a>
