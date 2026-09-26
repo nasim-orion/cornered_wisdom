@@ -28,6 +28,7 @@
             <p>{{ quote.notes }}</p>
         {% endif %}
         <a href="{% url 'edit_quote' quote.id %}">Edit</a>
+        <a href="{% url 'delete_quote' quote.id %}">Delete</a>
         <hr>
 
     {% empty %}
