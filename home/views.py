@@ -90,3 +90,14 @@ def edit_quote(request, quote_id):
         "quote": quote
     })
 
+@login_required
+def delete_quote(request, quote_id):
+    quote = Quote.objects.get(id=quote_id, user=request.user)
+
+    if request.method == "POST":
+        quote.delete()
+        return redirect("my_quotes")
+
+    return render(request, "home/delete_quote.html", {
+        "quote": quote
+    })
