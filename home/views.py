@@ -51,7 +51,7 @@ def add_quote(request):
             user=request.user,
             book=book,
             text=request.POST["text"],
-            page_number=request.POST["page_number"],
+            page_number=request.POST["page_number"] if request.POST["page_number"] else None,
             notes=request.POST["notes"]
         )
 
