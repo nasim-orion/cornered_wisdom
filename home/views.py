@@ -64,21 +64,21 @@ def add_quote(request):
 
 @login_required
 def my_quotes(request):
-    # quotes = Quote.objects.filter(user=request.user)
+    quotes = Quote.objects.filter(user=request.user)
     
     sort = request.GET.get("sort", "newest")
 
     if sort == "oldest":
-           quotes = Quote.objects.filter(user=request.user).order_by("created_at")
+           quotes = quotes.order_by("created_at")
 
     elif sort == "book":
-           quotes = Quote.objects.filter(user=request.user).order_by("book__title")
+           quotes = quotes.order_by("book__title")
 
     elif sort == "author":
-           quotes = Quote.objects.filter(user=request.user).order_by("book__author")
+           quotes = quotes.order_by("book__author")
 
     else:
-           quotes = Quote.objects.filter(user=request.user).order_by("-created_at")
+           quotes = quotes.order_by("-created_at")
 
 
     return render(request, "home/my_quotes.html", {
