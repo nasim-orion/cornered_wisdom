@@ -128,3 +128,7 @@ def delete_quote(request, quote_id):
     return render(request, "home/delete_quote.html", {
         "quote": quote
     })
+
+
+def about(request):
+    return render(request, "home/landing.html")
