@@ -30,6 +30,7 @@ urlpatterns = [
     path('delete-quote/<int:quote_id>/', delete_quote, name='delete_quote'),
     path('shuffle-quote/', shuffle_quote, name='shuffle_quote'),
     path('about/', about, name='about'),
+    path("", about, name="about"),
  
 
 ]
