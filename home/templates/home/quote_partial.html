@@ -8,9 +8,19 @@
         — <strong>{{ quote.book.title }}</strong>,
         {{ quote.book.author }}
     </p>
+    
+ <!-- Functionality to display notes on any quotes -->
+  
+    {% if quote.notes %}
+    <p class="notes">
+        {{ quote.notes }}
+    </p>
+{% endif %}
 
 {% else %}
 
     <p>Your quotes will appear here.</p>
 
 {% endif %}
+
+
