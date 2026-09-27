@@ -28,3 +28,12 @@ blockquote {
     margin-bottom: 50px;
     font-size: 18px;
 }
+
+#shuffle-button {
+    display: block;
+    margin: 0 auto 30px auto;
+    padding: 10px 24px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    cursor: pointer;
+}
