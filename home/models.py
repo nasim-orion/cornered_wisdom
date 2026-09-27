@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
-    author = models.CharField(max_length=255)
+    author = models.CharField(max_length=255, blank=True)
   
 
     def __str__(self):
