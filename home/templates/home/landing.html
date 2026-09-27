@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <title>About — Cornered Wisdom</title>
+</head>
+
+<body>
+
+    <h1>Cornered Wisdom</h1>
+
+    <h2>Save the words worth remembering. Build your personal house of wisdom</h2>
+
+    <p>
+        Cornered Wisdom is a personal collection for the quotes
+        you want to remember from the books you read. All the wisdom youve gathered in your journey, in one corner of the internet.
+    </p>
+
+    <p>
+        Save quotes along with the book, author, page number and
+        your own notes, then come back to them whenever you want. Whether you have anything new to add or just want to revisit your favorite quotes, Cornered Wisdom is the architect for your house of wisdom.
+    </p>
+
+    <a href="{% url 'register' %}">Create an Account</a>
+
+    <br><br>
+
+    <a href="{% url 'login' %}">Log In</a>
+
+</body>
+
+</html>
