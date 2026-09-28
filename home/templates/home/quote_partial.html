@@ -1,6 +1,8 @@
 {% if quote %}
 
-  <blockquote data-quote-id="{{ quote.id }}">
+    <blockquote data-quote-id="{{ quote.id }}">
+        “{{ quote.text }}”
+    </blockquote>
 
     <p class="book">
         — <strong>{{ quote.book.title }}</strong>,
