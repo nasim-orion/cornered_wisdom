@@ -37,3 +37,90 @@ blockquote {
     font-size: 16px;
     cursor: pointer;
 }
+
+
+
+/* styling for home page and quote display, including body, h1, blockquote, book, and shuffle button. */
+
+.book-page {
+    position: relative;
+    min-height: 650px;
+    padding: 90px 60px 60px;
+    background:
+    linear-gradient(
+        rgba(150, 125, 90, 0.18),
+        rgba(110, 85, 60, 0.22)
+    ),
+    url("images/paper-texture.png");
+
+background-size: cover;
+background-position: center;
+
+
+/* create a missing corner effect for the book page using clip-path */
+clip-path: polygon(
+    70px 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 70px
+);
+}
+
+
+/* folded corner effect for the book page */
+/* .book-page::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -5px;
+
+    width: 85px;
+    height: 78px;
+
+    background:
+    linear-gradient(
+        rgba(75, 55, 40, 0.28),
+        rgba(75, 55, 40, 0.28)
+    ),
+    url("images/paper-texture.png");
+
+background-size: cover;
+background-position: top left;
+clip-path: polygon(0 0, 100% 0, 0 100%);
+
+    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.22);
+
+   transform: rotate(0deg);
+} */
+
+
+
+/* folded corner effect for the book page */
+.book-wrapper {
+    position: relative;
+}
+
+.book-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 70px;
+    height: 70px;
+
+    background:
+        linear-gradient(
+            rgba(75, 55, 40, 0.25),
+            rgba(75, 55, 40, 0.25)
+        ),
+        url("images/paper-texture.png");
+
+    background-size: cover;
+    background-position: top left;
+
+   clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+    z-index: 2;
+}

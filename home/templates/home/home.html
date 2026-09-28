@@ -12,7 +12,8 @@
 </head>
 
 <body>
-
+    <div class="book-wrapper">
+<main class="book-page">
     <!-- Logout button -->
 <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
@@ -33,5 +34,7 @@
     <a href="{% url 'add_quote' %}">Add Quote</a>
     <br><br>
      <a href="{% url 'my_quotes' %}">View Saved Quotes</a>
+     </main>  
+     </div>   
 </body>
 </html>
