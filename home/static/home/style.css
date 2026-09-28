@@ -463,3 +463,46 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
     line-height: 1.5;
     margin: 0 auto 18px;
 }
+
+
+
+
+.register-form {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.register-form p {
+    margin-bottom: 22px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.register-form input {
+    width: 100%;
+}
+
+.register-form .helptext {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #5a4635;
+}
+
+.register-form ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #5a4635;
+}
+
+.register-form button {
+    display: block;
+    margin: 25px auto 0;
+}
