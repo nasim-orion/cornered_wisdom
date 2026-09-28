@@ -520,7 +520,7 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 
 
 /* Tablets */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     body,
     .landing-body {
         width: 100%;
