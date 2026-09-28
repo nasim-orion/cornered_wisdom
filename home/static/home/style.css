@@ -1,10 +1,18 @@
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Georgia, serif;
-    max-width: 800px;
+    max-width: 870px;
     margin: 60px auto;
     padding: 0 20px;
-    background-color: #f7f4ee;
+    background-color: #3b2a1e;
     color: #333;
+    background-image: url("images/body-image.png");
+    background-size: cover;
+    background-position: center; 
 }
 
 h1 {
@@ -59,7 +67,7 @@ box-shadow:
 .logout-button {
     font-family: Georgia, serif;
     font-size: 14px;
-    f
+    
 
     color: #3f2d20;
     background: rgba(255, 248, 230, 0.18);
@@ -91,7 +99,7 @@ box-shadow:
 
 .book-page {
     position: relative;
-    min-height: 650px;
+    min-height: 100vh;
     padding: 90px 60px 60px;
     background:
     linear-gradient(
@@ -146,6 +154,9 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 /* folded corner effect for the book page */
 .book-wrapper {
     position: relative;
+     margin-top: -60px;
+     margin-bottom: -60px;
+     left: 35px;
 }
 
 .book-wrapper::before {
