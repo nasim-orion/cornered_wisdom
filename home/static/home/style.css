@@ -14,6 +14,12 @@ h1 {
 }
 
 blockquote {
+    /* paper texture background */
+    background-image: url("images/quote-paper-texture.png");
+    background-size: cover;
+    background-position: center;
+
+
     font-size: 28px;
     line-height: 1.6;
     margin: 0;
