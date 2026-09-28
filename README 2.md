@@ -623,7 +623,7 @@ The same core application and interface are used locally and on Heroku.
 During development, deployment-specific issues included configuring the
 correctly named `Procfile`, enabling the web process, configuring
 WhiteNoise/static files and ensuring environment-based database settings
-were used. These were resolved so that the deployed application now
+were used. These were resolved with the use of AI so that the deployed application now
 reflects the intended project functionality.
 
 ## Credits
@@ -679,10 +679,10 @@ original source and usage should also be credited here.
 
 ### Acknowledgements
 
-I would like to thank the people and learning resources that supported
+I would like to thank the staff at Code institute for their time and learning resources that supported
 me during the development of Cornered Wisdom, particularly those who
 provided guidance, debugging support and feedback while I developed my
-understanding of Django and full-stack web development.
+understanding of Django and full-stack web development. I would also like to thank the rest of the members of the cohort for helping with debugging and providing moral support.
 
 
 #### Cloning
@@ -717,13 +717,12 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 
 
-There are no  major differences between the local version when compared to the deployed version online.
+- There are no  major differences between the local version when compared to the deployed version online.
 
 
-⚠️ --- END ---⚠️
+ ### END 
 
-- I would like to thank my Code Institute masterclass coach, [Tim Nelson](https://www.github.com/TravelTimN), as well as cohort facilitator Marko for the support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) for the education and skills and learning platform they have provided me with.
-- I would like to thank the Discord cohort](https://discord-portal.codeinstitute.net) for the moral support.
+- I would like to give special thanks to my Code Institute masterclass coach, [Tim Nelson](https://www.github.com/TravelTimN), as well as cohort facilitator Marko for the support and understanding throughout the development of this project.
+
 
 
