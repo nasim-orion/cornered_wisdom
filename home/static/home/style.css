@@ -549,11 +549,7 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
         padding: 0 10px;
     }
 
-    body {
-        background-size: 100% auto;
-        background-repeat: repeat-y;
-        background-position: top center;
-    }
+  
 
     .book-page {
         padding: 60px 30px 40px;
