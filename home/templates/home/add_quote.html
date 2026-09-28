@@ -1,51 +1,63 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
     <title>Add Your Quote — Cornered Wisdom</title>
 </head>
 
 <body>
+    <div class="book-wrapper">
+    <main class="book-page">
 
     <h1>Add a Quote</h1>
 
      {% if error %}
      <p>{{ error }}</p>
      {% endif %}
-     <form method="post">
+     <form method="post" class="quote-form">
         {% csrf_token %}
+        <div class="form-field">
 
         <label>Quote:</label>
         <textarea name="text"required></textarea>
 
-        <br><br>
-
+        </div>     
+        
+        <div class="form-field">
+ 
         <label>Book title:</label>
         <input type="text" required name="book_title" >
 
-        <br><br>
+        </div>
+
+        <div class="form-field">
 
         <label>Author:</label>
         <input type="text" name="author">
+        </div>
 
-        <br><br>
 
-        <label>Page number:</label>
-        <input type="number" name="page_number" min="1">
-        <small>Page number must be 1 or above.</small>
+         <div class="form-field">
+          <label>Page number:</label>
+          <input type="number" name="page_number" min="1">
+          <small>Page number must be 1 or above.</small>
+         </div>
 
-        <br><br>
-
+         <div class="form-field">
+          
         <label>Notes:</label>
         <textarea name="notes"></textarea>
 
-        <br><br>
+        </div>
 
         <button type="submit">Add Quote</button>
     </form>
 
-    <a href="{% url 'home' %}">Back to Home</a>
+    <a class="back-link" href="{% url 'home' %}">Back to Home</a>
     
-
+</main>
+</div>
 </body>
 </html>

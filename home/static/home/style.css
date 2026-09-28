@@ -245,3 +245,56 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
     gap: 20px;
     margin-top: 10px;
 }
+
+.quote-form input,
+.quote-form textarea {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #3f2d20;
+    font-weight: italic;
+
+    background: rgba(255, 248, 230, 0.45);
+    border: 1px solid #6b5138;
+
+    padding: 8px;
+}
+
+
+.quote-form button {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: #2b1b10;
+    font-weight: bold;
+
+    background: rgba(255, 248, 230, 0.18);
+    border: 1px solid #5a422f;
+
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+.quote-form button:hover {
+    color: #cc6505;
+}
+
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    
+}
+
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+}
