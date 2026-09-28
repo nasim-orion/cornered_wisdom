@@ -1,10 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'home/images/favicon.png' %}">
     <title>Delete Quote — Cornered Wisdom</title>
 </head>
 
 <body>
+    <div class="book-wrapper">
+    <main class="book-page">
 
     <h1>Delete Quote</h1>
 
@@ -14,17 +19,19 @@
         “{{ quote.text }}”
     </blockquote>
 
-    <form method="post">
+    <form method ="post" class="quote-form delete-form">
         {% csrf_token %}
-        <button type="submit">Yes, Delete</button>
+        <button type="submit" class="delete-button">Yes, Delete</button>
     </form>
 
     <br>
 
+    <div class="quote-actions">
     <a href="{% url 'my_quotes' %}">Cancel</a>
-
     <a href="{% url 'home' %}">Back to Home</a>
-    
+    </div>
+    </main>     
+    </div>
 
 </body>
 </html>
