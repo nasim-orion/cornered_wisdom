@@ -391,42 +391,18 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 
 
 .cover-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
     width: 300px;
-    margin: -25px auto 30px;
-
-    color: #d4ad68;
-}
-
-.cover-divider::before,
-.cover-divider::after {
-    content: "";
-    flex: 1;
+    max-width: 70%;
     height: 1px;
+    margin: -25px auto 30px;
 
     background: linear-gradient(
         to right,
         transparent,
-        #d4ad68
+        #d4ad68,
+        transparent
     );
 }
-
-.cover-divider::after {
-    background: linear-gradient(
-        to left,
-        transparent,
-        #d4ad68
-    );
-}
-
-.cover-divider span {
-    font-size: 25px;
-}
-
 
 
 .landing-intro {
