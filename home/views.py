@@ -61,6 +61,7 @@ def add_quote(request):
 
 
 
+
 @login_required
 def my_quotes(request):
     quotes = Quote.objects.filter(user=request.user)
@@ -108,10 +109,20 @@ def edit_quote(request, quote_id):
     quote = Quote.objects.get(id=quote_id, user=request.user)
 
     if request.method == "POST":
+        page_number = request.POST["page_number"]
+
+# Prevents page numbers less than 1 from being saved to the database.
+
+        if page_number and int(page_number) < 1:
+            return render(request, "home/edit_quote.html", {
+                "quote": quote,
+                "error": "Page number must be 1 or above."
+            })
+
         quote.text = request.POST["text"]
         quote.book.title = request.POST["book_title"]
         quote.book.author = request.POST["author"]
-        quote.page_number = request.POST["page_number"] if request.POST["page_number"] else None
+        quote.page_number = int(page_number) if page_number else None
         quote.notes = request.POST["notes"]
 
         quote.book.save()
