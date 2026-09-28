@@ -3,6 +3,7 @@ from django.http import HttpResponse, request
 from .models import Quote, Book
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.db.models import Case, When, Value, IntegerField
 
 @login_required
 def home(request):
@@ -75,7 +76,13 @@ def my_quotes(request):
            quotes = quotes.order_by("book__title")
 
     elif sort == "author":
-           quotes = quotes.order_by("book__author")
+     quotes = quotes.annotate(
+        author_blank=Case(
+            When(book__author="", then=Value(1)),
+            default=Value(0),
+            output_field=IntegerField(),
+        )
+    ).order_by("author_blank", "book__author")
 
     else:
            quotes = quotes.order_by("-created_at")
