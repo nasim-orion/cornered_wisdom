@@ -100,8 +100,8 @@ def shuffle_quote(request):
 
     current_quote_id = request.GET.get("current")
 
-    if current_quote_id:
-        quotes = quotes.exclude(id=current_quote_id)
+    if current_quote_id and quotes.count() > 1:
+     quotes = quotes.exclude(id=current_quote_id)
 
     quote = quotes.order_by("?").first()
 
