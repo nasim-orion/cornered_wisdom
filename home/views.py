@@ -97,6 +97,12 @@ def my_quotes(request):
 @login_required
 def shuffle_quote(request):
     quotes = Quote.objects.filter(user=request.user)
+
+    current_quote_id = request.GET.get("current")
+
+    if current_quote_id:
+        quotes = quotes.exclude(id=current_quote_id)
+
     quote = quotes.order_by("?").first()
 
     if quote:
