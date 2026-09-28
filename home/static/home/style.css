@@ -514,3 +514,60 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
     height: auto;
     margin: 0 auto 20px;
 }
+
+
+
+
+
+/* Tablets and smaller screens */
+@media (max-width: 900px) {
+
+    body,
+    .landing-body {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .book-wrapper {
+        left: 0;
+    }
+}
+
+
+/* Phones */
+@media (max-width: 600px) {
+
+    body,
+    .landing-body {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    .book-page {
+        padding: 60px 30px 40px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+
+    blockquote {
+        font-size: 21px;
+        padding: 20px;
+    }
+
+    .notes {
+        font-size: 18px;
+    }
+
+    .home-links {
+        gap: 20px;
+    }
+
+    .page-logo {
+        width: 80px;
+    }
+}
