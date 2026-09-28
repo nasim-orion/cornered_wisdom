@@ -7,6 +7,10 @@
 <body>
 
     <h1>Edit A Quote</h1>
+ 
+    {% if error %}
+    <p>{{ error }}</p>
+     {% endif %}
 
     <form method="post">
         {% csrf_token %}
@@ -27,7 +31,7 @@
         <br><br>
 
         <label>Page number:</label>
-        <input type="number" name="page_number" value="{{ quote.page_number|default_if_none:'' }}">
+        <input type="number" name="page_number" min="1" value="{{ quote.page_number|default_if_none:'' }}">
 
         <br><br>
 
