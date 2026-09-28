@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-s5s9d8u$05e!eyp#@h8x#o547(j)1s4qup19ix2h!$pgzxrqzy'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -82,15 +82,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cornered_wisdom.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
