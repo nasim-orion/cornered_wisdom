@@ -519,9 +519,8 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 
 
 
-/* Tablets and smaller screens */
+/* Tablets */
 @media (max-width: 900px) {
-
     body,
     .landing-body {
         width: 100%;
@@ -538,7 +537,6 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 
 /* Phones */
 @media (max-width: 600px) {
-
     body,
     .landing-body {
         margin: 10px auto;
@@ -563,11 +561,11 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
         font-size: 18px;
     }
 
-    .home-links {
-        gap: 20px;
-    }
-
     .page-logo {
         width: 80px;
+    }
+
+    .home-links {
+        gap: 20px;
     }
 }
