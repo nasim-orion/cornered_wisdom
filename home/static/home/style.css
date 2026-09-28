@@ -529,6 +529,12 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
         padding: 0 15px;
     }
 
+    body {
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: top center;
+    }
+
     .book-wrapper {
         left: 0;
     }
@@ -541,6 +547,12 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
     .landing-body {
         margin: 10px auto;
         padding: 0 10px;
+    }
+
+    body {
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: top center;
     }
 
     .book-page {
