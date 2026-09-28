@@ -1,14 +1,20 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'home/images/favicon.png' %}">
     <title>Login — Cornered Wisdom</title>
 </head>
 
 <body>
+    <div class="book-wrapper">
+    <main class="book-page">
 
     <h1>Log in to Cornered Wisdom</h1>
 
-    <form method="post">
+    <form method="post" class="quote-form">
         {% csrf_token %}
 
         {{ form.as_p }}
@@ -26,6 +32,7 @@
     <a href="{% url 'register' %}">here</a>
      to begin building your house of wisdom in this corner of the web.
 </p>
-
+    </main>
+    </div>
 </body>
 </html>
