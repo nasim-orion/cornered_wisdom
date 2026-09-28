@@ -238,3 +238,10 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 .sort-form button:hover {
     color: #cc6505;
 }
+
+
+.quote-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
