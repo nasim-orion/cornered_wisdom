@@ -506,3 +506,11 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
     display: block;
     margin: 25px auto 0;
 }
+
+
+.page-logo {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 0 auto 20px;
+}
