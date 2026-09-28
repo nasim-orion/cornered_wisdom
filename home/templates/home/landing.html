@@ -4,11 +4,14 @@
 <html>
 
 <head>
+    <link rel="icon" type="image/png" href="{% static 'home/images/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'home/style.css' %}">
     <title>About — Cornered Wisdom</title>
 </head>
 
 <body>
+    <div class="book-wrapper">
+    <main class="book-page">
 
     <h1>Cornered Wisdom</h1>
 
@@ -29,7 +32,8 @@
     <br><br>
 
     <a href="{% url 'login' %}">Log In</a>
-
+</main> 
+</div>
 </body>
 
 </html>

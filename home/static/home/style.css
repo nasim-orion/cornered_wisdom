@@ -298,3 +298,29 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 .form-field textarea {
     width: 100%;
 }
+
+
+
+.delete-button {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: #f3e5cf;
+    
+
+    background: #6b3028;
+    border: 1px solid #452019;
+
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #54231d;
+    color: #ffffff;
+}
+
+
+.delete-form {
+    margin-top: 20px;
+    text-align: center;
+}
