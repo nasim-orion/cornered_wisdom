@@ -14,15 +14,15 @@
 
     <h1>My Quotes</h1>
 
-    <form method="get">
+    <form method="get" class="sort-form">
         <label for="sort">Sort by:</label>
-        <select name="sort" id="sort">
+        <select name="sort" id="sort" onchange="this.form.submit()">
             <option value="newest" {% if sort == "newest" %}selected{% endif %}>Newest</option>
             <option value="oldest" {% if sort == "oldest" %}selected{% endif %}>Oldest</option>
             <option value="book" {% if sort == "book" %}selected{% endif %}>Book</option>
             <option value="author" {% if sort == "author" %}selected{% endif %}>Author</option>
         </select>
-        <button type="submit">Apply</button>
+        
     </form>
 
     {% for quote in quotes %}

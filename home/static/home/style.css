@@ -204,3 +204,37 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 
     z-index: 2;
 }
+
+
+
+
+
+
+.sort-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 35px;
+
+    font-family: Georgia, serif;
+}
+
+.sort-form select,
+.sort-form button {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: #3f2d20;
+
+    background: rgba(255, 248, 230, 0.35);
+    border: 1px solid #5a422f;
+
+    padding: 6px 10px;
+}
+
+.sort-form button {
+    cursor: pointer;
+}
+
+.sort-form button:hover {
+    color: #cc6505;
+}
