@@ -531,7 +531,7 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
 
     body {
         background-size: 100% auto;
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
         background-position: top center;
     }
 
