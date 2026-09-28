@@ -1,10 +1,16 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
     <title>My Quotes — Cornered Wisdom</title>
 </head>
 
 <body>
+
+<div class="book-wrapper">
+    <main class="book-page">
 
     <h1>My Quotes</h1>
 
@@ -53,7 +59,11 @@
     <br><br>
 
     
-    
+
     <a href="{% url 'home' %}">Back to Home</a>
+
+    </main>
+</div>
+
 </body>
 </html>
