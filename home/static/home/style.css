@@ -38,6 +38,15 @@ blockquote {
     border-left: 5px solid #333;
 }
 
+.notes {
+    font-style: italic;
+    color: #413226;
+    margin-top: 15px;
+    font-size: 25px;
+    
+}
+
+
 .book {
     text-align: right;
     margin-top: 15px;
@@ -158,6 +167,19 @@ clip-path: polygon(0 0, 100% 0, 0 100%);
      margin-bottom: -60px;
      left: 35px;
 }
+
+
+
+
+.home-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    font-family: Georgia, serif;
+    color: #333;
+}
+
 
 .book-wrapper::before {
     content: "";
