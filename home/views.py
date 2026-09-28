@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from .models import Quote, Book
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -35,6 +35,13 @@ def register(request):
 @login_required
 def add_quote(request):
     if request.method == "POST":
+        page_number = request.POST["page_number"]
+
+        if page_number and int(page_number) < 1:
+            return render(request, "home/add_quote.html", {
+                "error": "Page number must be 1 or above."
+            })
+
         book = Book.objects.create(
             title=request.POST["book_title"],
             author=request.POST["author"]
@@ -44,14 +51,13 @@ def add_quote(request):
             user=request.user,
             book=book,
             text=request.POST["text"],
-            page_number=request.POST["page_number"] if request.POST["page_number"] else None,
+            page_number=int(page_number) if page_number else None,
             notes=request.POST["notes"]
         )
 
         return redirect("home")
 
     return render(request, "home/add_quote.html")
-
 
 
 
