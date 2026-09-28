@@ -16,12 +16,12 @@
         {% csrf_token %}
 
         <label>Quote:</label>
-        <textarea name="text">{{ quote.text }}</textarea>
+        <textarea name="text" required>{{ quote.text }}</textarea>
 
         <br><br>
 
         <label>Book title:</label>
-        <input type="text" name="book_title" value="{{ quote.book.title }}">
+        <input type="text" name="book_title" value="{{ quote.book.title }}" required>
 
         <br><br>
 
