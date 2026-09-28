@@ -9,7 +9,9 @@ body {
 
 h1 {
     text-align: center;
+    font-family: Garamond, "Times New Roman", serif;
     font-size: 42px;
+    letter-spacing: 1px;
     margin-bottom: 50px;
 }
 
@@ -41,12 +43,51 @@ blockquote {
     padding: 10px 24px;
     font-family: Georgia, serif;
     font-size: 16px;
+    font-weight: bold;
+    color: #2b1b10;
     cursor: pointer;
+   background: rgba(255, 248, 230, 0.18);
+   
+   border: 1px solid #5a422f;
+   border-radius: 1px;
+
+box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 
+.logout-button {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    f
 
-/* styling for home page and quote display, including body, h1, blockquote, book, and shuffle button. */
+    color: #3f2d20;
+    background: rgba(255, 248, 230, 0.18);
+
+    border: 1px solid #5a422f;
+    border-radius: 1px;
+
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    color: #cc6505;
+}
+
+.book-page a {
+    color: #4a3020;
+    font-weight: bold;
+    text-decoration-color: #6b4b32;
+    text-underline-offset: 3px;
+}
+
+.book-page a:hover {
+    color: #cc6505;
+}
+
+
+/* styling for home page and quote display. */
 
 .book-page {
     position: relative;
