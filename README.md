@@ -1,567 +1,683 @@
-# [cornered_wisdom](https://cornered-wisdom-0c18133950ec.herokuapp.com)
+# Cornered Wisdom
 
-Developer: Nasim Orion ([nasim-orion](https://www.github.com/nasim-orion))
+Developer: Nasim Orion
+([nasim-orion](https://www.github.com/nasim-orion))
 
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/nasim-orion/cornered_wisdom)](https://www.github.com/nasim-orion/cornered_wisdom/commits/main)
-[![GitHub last commit](https://img.shields.io/github/last-commit/nasim-orion/cornered_wisdom)](https://www.github.com/nasim-orion/cornered_wisdom/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/nasim-orion/cornered_wisdom)](https://www.github.com/nasim-orion/cornered_wisdom)
-[![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://cornered-wisdom-0c18133950ec.herokuapp.com)
+[![GitHub commit
+activity](https://img.shields.io/github/commit-activity/t/nasim-orion/cornered_wisdom)](https://www.github.com/nasim-orion/cornered_wisdom/commits/main)
+[![GitHub last
+commit](https://img.shields.io/github/last-commit/nasim-orion/cornered_wisdom)](https://www.github.com/nasim-orion/cornered_wisdom/commits/main)
+[![GitHub repo
+size](https://img.shields.io/github/repo-size/nasim-orion/cornered_wisdom)](https://www.github.com/nasim-orion/cornered_wisdom)
+[![Deployment](https://img.shields.io/badge/deployment-Heroku-purple)](https://cornered-wisdom-0c18133950ec.herokuapp.com)
 
-⚠️ PROJECT INTRODUCTION AND RATIONALE⚠️
+Cornered Wisdom is a personal quote collection application designed for
+readers who want to save meaningful passages from books and return to
+them later. Instead of quotes becoming lost in notebooks, photographs,
+highlights or forgotten pages, the application gives each user one
+private place to record a quote together with its source and their own
+thoughts.
 
-In this section, include a few paragraphs providing an overview of your project. Essentially, this part is your "sales pitch". Describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience. Also, assessors lately have been asking that students explain "why" they opted to do a project about this particular topic/subject, so be sure to explain what made you choose this particular theme/concept/subject/idea. This is the project "rationale".
+The application allows registered users to save the quote text, book
+title, author, page number and personal notes. Saved quotes can be
+viewed as a collection, sorted in several ways, edited, deleted, or
+rediscovered using the shuffle feature. The aim is to make revisiting
+collected ideas as important and revelatory as collecting them in the first place.
 
-⚠️ --- END --- ⚠️
+I chose this project because I wanted to create a practical application personal to me that I myself have wanted to see built and developed, albeit I would much have preferred this to be a mobile app with image scanning capabilities but that is beyond the scope of this project. This website is built
+around the experience of reading and preserving useful ideas. The
+concept of a personal "house of wisdom"  shaped both the functionality
+and the visual identity of the project. The interface therefore uses an
+old-book/manuscript aesthetic, with parchment textures, floral
+borders and classical architectural imagery, rather than a conventional
+modern dashboard. This was done to bring to the user's mind images of antiquity.
 
-🛑 README NOTES 🛑
-
-Do not add a **Table of Contents** to your Markdown files. GitHub has these built-in automatically using the headers/hashtags.
-
-Don't add screenshots for the README/TESTING into your `assets` or `static` folders. Create a new folder at the root-level called `documentation`. Consider creating sub-directories within `documentation` to handle things like `wireframes`, `features`, `validation`, `responsiveness`, etc.
-
-Learn about Markdown Alerts (aka Callouts), a fairly new feature for GitHub Markdown files.
-https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
-Note: these are not visible within your README Previewer, and are only visible once you push the code to GitHub.
-
-**Site Mockups**
-*([amiresponsive](https://ui.dev/amiresponsive?url=https://cornered-wisdom-0c18133950ec.herokuapp.com), [techsini](https://techsini.com/multi-mockup), etc.)*
-Having issues generating site mockups? This is likely due to security policies with your deployed site.
-If you open up your DevTools, there may be an error referencing `X-Frame-Options`.
-
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser. Once installed, navigate back to the mockup site of your choice. You should find your site rendering in the various devices now.
-
-Alternatively, open your project in Gitpod and run the server. Once the site is running, click the `Ports` tab from your Gitpod Terminal. Click the padlock on the appropriate port for your project (`Flask: 5000`, `Django: 8000`). This will make your local page public temporarily. Now, copy the URL of your live-preview page into the responsive tool above. You should find your site rendering in the various devices.
-
-🛑 --- END ---- 🛑
-
-![screenshot](documentation/mockup.png)
-
-source: [cornered_wisdom amiresponsive](https://ui.dev/amiresponsive?url=https://cornered-wisdom-0c18133950ec.herokuapp.com)
-
-> [!IMPORTANT]  
-> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "I Think Therefore I Blog".
+![Responsive mockup](documentation/features/home.PNG.png)
 
 ## UX
 
 ### The 5 Planes of UX
 
-⚠️ NOTE: make sure to update the text below to match your own project! ⚠️
-
 #### 1. Strategy
 
 **Purpose**
-- Provide blog owners with tools to create, manage, and moderate engaging blog content and user interactions.
-- Offer users and guests an intuitive platform to explore, engage, and contribute to blog discussions.
+
+-   Give readers a dedicated place to preserve memorable quotations from
+    books.
+-   Allow users to record useful context such as the book, author, page
+    number and personal notes.
+-   Encourage users to revisit previously saved material rather than
+    simply accumulating it.
+-   Keep each registered user's collection separate and personal.
 
 **Primary User Needs**
-- Blog owners need seamless tools for publishing and managing posts and comments.
-- Registered users need the ability to engage with blog content through comments and account features.
-- Guests need the ability to browse and enjoy blog content without registration.
 
-**Business Goals**
-- Foster a dynamic blogging platform with active user participation.
-- Build a sense of community through discussions and user engagement.
-- Ensure easy blog content management for owners.
+-   Visitors need to understand quickly what Cornered Wisdom does before
+    creating an account.
+-   Users need a straightforward way to register, log in and log out.
+-   Authenticated users need to create, view, edit and delete their own
+    quotes.
+-   Users need to find and organise saved material without unnecessary
+    complexity.
+-   Users need a simple way to rediscover quotes they may not otherwise
+    revisit.
+-   The interface should remain usable across desktop, tablet and mobile
+    screen sizes.
+
+**Project Goals**
+
+-   Deliver a complete CRUD application using Django.
+-   Provide secure user-specific access to saved quotes.
+-   Keep the interface simple enough that saving a quote does not
+    interrupt the reading experience.
+-   Create a distinctive visual identity appropriate to books, reading
+    and collected wisdom.
+-   Deploy a working production version of the application.
 
 #### 2. Scope
 
-**[Features](#features)** (see below)
+This release focuses on the core quote-collection workflow rather
+than social or community functionality. Hence the exclusion of a user profile or share links etc.
 
-**Content Requirements**
-- Blog post management (create, update, delete, and preview).
-- Comment moderation and management tools.
-- User account features (register, log in, edit/delete comments).
-- Notification system for comment approval status.
-- 404 error page for lost users.
+**Content and Functional Requirements**
+
+-   Public landing page explaining the application.
+-   User registration, login and logout.
+-   Add a quote.
+-   Store book title and optional author.
+-   Store an optional page number and personal notes.
+-   View only the currently authenticated user's saved quotes.
+-   Edit an existing quote.
+-   Delete an existing quote after confirmation.
+-   Sort saved quotes by newest, oldest, book or author.
+-   Display a random saved quote on the home page.
+-   Shuffle to another quote without reloading the full page.
+-   Shuffle to another quote without landing on the same quote that was already displayed.
+-   Server-side validation for required fields and page numbers.
+-   Responsive layouts for desktop, tablet and mobile devices.
 
 #### 3. Structure
 
 **Information Architecture**
-- **Navigation Menu**:
-  - Links to Home, Blog Posts, Login/Register, and Dashboard (for blog owners).
-- **Hierarchy**:
-  - Blog content displayed prominently for easy browsing.
-  - Clear call-to-action buttons for account creation and engagement (e.g., commenting).
+
+The application is deliberately small. Guests arrive at the landing page
+and can either create an account or log in. Authenticated users arrive
+at the home page, where a saved quote is presented. From
+there they can add a quote, view their saved collection, shuffle the
+displayed quote, or log out.
+
+The saved-quotes page acts as the main management area. From it, users
+can sort their collection and access edit or delete actions for
+individual quotes.
 
 **User Flow**
-1. Guest users browse blog content → read posts and see commenter names.
-2. Guest users register for an account → log in to leave comments.
-3. Registered users leave comments → receive a pending approval notification.
-4. Blog owners create, update, and manage posts → moderate comments.
-5. Blog owners approve or reject comments → manage user interactions.
+
+1.  A guest visits the landing page and learns what Cornered Wisdom
+    offers.
+2.  The guest registers for an account or logs in to an existing
+    account.
+3.  The authenticated user reaches the home page and sees one of their
+    saved quotes.
+4.  The user can add a new quote with its source information and notes.
+5.  The user can open the section called **My Quotes** to browse and sort their collection.
+6.  From the collection, the user can edit or delete one of their own
+    quotes.
+7.  The user can return home and use **Shuffle** to rediscover another
+    saved quote.
+8.  The user can log out when finished.
 
 #### 4. Skeleton
 
-**[Wireframes](#wireframes)** (see below)
+Wireframes are documented in the [Wireframes](#wireframes) section of documentation. The
+interface was designed around a narrow central reading area so that
+quote text remains the visual focus. Forms use simple vertical layouts
+and the main actions are intentionally limited.
 
 #### 5. Surface
 
-**Visual Design Elements**
-- **[Colours](#colour-scheme)** (see below)
-- **[Typography](#typography)** (see below)
+The final visual design takes inspiration from old books, manuscripts
+and classical architecture. The authenticated pages use parchment
+textures with a floral, old fashioned book border. The landing page is presented
+more like a book cover, establishing the visual theme before the user
+enters the application(and "opens the book").
 
 ### Colour Scheme
 
-⚠️INSTRUCTIONS ⚠️
+Cornered Wisdom uses a restrained palette based on parchment/velum, leather,
+dark brown ink and gold.
 
-Explain your colors and color scheme. Consider adding a link and screenshot for your color scheme using [coolors](https://coolors.co/generate).
+-   `#3b2a1e` --- dark brown base/background.
+-   `#333333` --- primary dark text.
+-   `#4a3020` --- primary link colour.
+-   `#6b4b32` / `#5a422f` --- borders and secondary brown details.
+-   `#cc6505` --- warm orange-brown hover accent.
+-   `#413226` --- notes and secondary text.
+-   `#d4ad68` --- gold decorative accent used on the book-cover design.
 
-When you add a color to the palette, the URL is dynamically updated, making it easier for you to return back to your color palette later if needed. See example below:
-
-⚠️ --- END --- ⚠️
-
-I used [coolors.co](https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6) to generate my color palette.
-
-- `#000000` primary text.
-- `#3772FF` primary highlights.
-- `#DF2935` secondary text.
-- `#FDCA40` secondary highlights.
-
-![screenshot](documentation/coolors.png)
+The palette was chosen to support the old-book aesthetic while retaining
+sufficient contrast between text, controls and parchment backgrounds.
 
 ### Typography
 
-⚠️ INSTRUCTIONS ⚠️
+The site primarily uses **Georgia**, a serif typeface chosen because its
+traditional letterforms complement the book/manuscript design and remain
+readable for longer quotations. Headings also use **Garamond** with
+`"Times New Roman"` as a fallback where appropriate. These fonts present class without being gaudy and offensive to the modern readers palate.
 
-Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome**, etc. Consider adding a link to each font used, the Font Awesome site (if used), or similar icon library.
-
-⚠️ --- END --- ⚠️
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+The project does not depend on an external icon library for its main
+interface. The classical temple/book logo and favicon generated by ChatGPT form the main
+visual branding.
 
 ## Wireframes
 
-⚠️ INSTRUCTIONS ⚠️
+Wireframes were created using Balsamiq to plan the structure and layout of the application.
 
-If you've created wireframes or mock-ups, use this section to display screenshots of your wireframes. The example table below uses sample pages from the walkthrough project to give you some inspiration for your own project, so please adjust accordingly.
+### Landing Page
 
-⚠️ --- END --- ⚠️
+![Landing page wireframe](documentation/wireframes/landing.png)
 
-To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+### Home Page
 
-| Page | Mobile | Tablet | Desktop |
-| --- | --- | --- | --- |
-| Register | ![screenshot](documentation/wireframes/mobile-register.png) | ![screenshot](documentation/wireframes/tablet-register.png) | ![screenshot](documentation/wireframes/desktop-register.png) |
-| Login | ![screenshot](documentation/wireframes/mobile-login.png) | ![screenshot](documentation/wireframes/tablet-login.png) | ![screenshot](documentation/wireframes/desktop-login.png) |
-| Home | ![screenshot](documentation/wireframes/mobile-home.png) | ![screenshot](documentation/wireframes/tablet-home.png) | ![screenshot](documentation/wireframes/desktop-home.png) |
-| Add Blog | ![screenshot](documentation/wireframes/mobile-add-blog.png) | ![screenshot](documentation/wireframes/tablet-add-blog.png) | ![screenshot](documentation/wireframes/desktop-add-blog.png) |
-| Edit Blog | ![screenshot](documentation/wireframes/mobile-edit-blog.png) | ![screenshot](documentation/wireframes/tablet-edit-blog.png) | ![screenshot](documentation/wireframes/desktop-edit-blog.png) |
-| Blog Post | ![screenshot](documentation/wireframes/mobile-blog-post.png) | ![screenshot](documentation/wireframes/tablet-blog-post.png) | ![screenshot](documentation/wireframes/desktop-blog-post.png) |
-| 404 | ![screenshot](documentation/wireframes/mobile-404.png) | ![screenshot](documentation/wireframes/tablet-404.png) | ![screenshot](documentation/wireframes/desktop-404.png) |
+![Home page wireframe](documentation/wireframes/home.png)
+
+### My Quotes
+
+![My Quotes wireframe](documentation/wireframes/my-quotes.png)
+
+### Add Quote 
+
+![Add Quote wireframe](documentation/wireframes/add-quote.png)
+### Edit Quote 
+
+![Add Quote wireframe](documentation/wireframes/edit-quote.png)
+### Delete Quote 
+
+![Delete Quote wireframe](documentation/wireframes/delete-quote.png)
 
 ## User Stories
 
-⚠️ INSTRUCTIONS ⚠️
+  -----------------------------------------------------------------------
+  Target                  Expectation             Outcome
+  ----------------------- ----------------------- -----------------------
+  As a guest user         I would like to         so that I can decide
+                          understand the purpose  whether I want to
+                          of the application      create an account.
 
-In this section, list all of your possible user stories for the project. Samples have been provided below using the example walkthrough project for your inspiration. Make sure to adjust to match your own project features!
+  As a guest user         I would like to         so that I can create my
+                          register                own quote collection.
 
-⚠️ --- END --- ⚠️
+  As a registered user    I would like to log in  so that I can access my
+                                                  saved quotes.
 
-| Target | Expectation | Outcome |
-| --- | --- | --- |
-| As a blog owner | I would like to create new blog posts with a title, featured image, and content | so that I can share my experiences with my audience. |
-| As a blog owner | I would like to update existing blog posts | so that I can correct or add new information to my previous stories. |
-| As a blog owner | I would like to delete blog posts | so that I can remove outdated or irrelevant content from my blog. |
-| As a blog owner | I would like to retrieve a list of all my published blog posts | so that I can manage them from a central dashboard. |
-| As a blog owner | I would like to preview a post as draft before publishing it | so that I can ensure formatting and content appear correctly. |
-| As a blog owner | I would like to review comments before they are published | so that I can filter out spam or inappropriate content. |
-| As a blog owner | I would like to approve or reject comments from users | so that I can maintain control over the discussion on my posts. |
-| As a blog owner | I would like to view a list of all comments (both approved and pending) | so that I can manage user engagement effectively. |
-| As a blog owner | I would like to edit or delete user comments | so that I can clean up or remove inappropriate responses after they've been posted. |
-| As a registered user | I would like to log in to the site | so that I can leave comments on blog posts. |
-| As a registered user | I would like to register for an account | so that I can become part of the community and engage with the blog. |
-| As a registered user | I would like to leave a comment on a blog post | so that I can share my thoughts or ask questions about the owner's experiences. |
-| As a registered user | I would like my comment to show my name and the timestamp | so that others can see who I am and when I left the comment. |
-| As a registered user | I would like to receive a notification or message saying my comment is pending approval | so that I understand it hasn't been posted immediately. |
-| As a registered user | I would like to edit or delete my own comments | so that I can fix mistakes or retract my statement. |
-| As a guest user | I would like to read blog posts without registering | so that I can enjoy the content without needing to log in. |
-| As a guest user | I would like to browse past posts | so that I can explore the blog's full content history. |
-| As a guest user | I would like to register for an account | so that I can participate in the community by leaving comments on posts. |
-| As a guest user | I would like to see the names of other commenters on posts | so that I can get a sense of community interaction before registering. |
-| As a user | I would like to see a 404 error page if I get lost | so that it's obvious that I've stumbled upon a page that doesn't exist. |
+  As a registered user    I would like to log out so that I can end my
+                                                  authenticated session.
+
+  As a registered user    I would like to add a   so that I can preserve
+                          quote                   a passage I want to
+                                                  remember.
+
+  As a registered user    I would like to record  so that I remember
+                          the book title and      where a quote came
+                          author                  from.
+
+  As a registered user    I would like to record  so that I can find the
+                          an optional page number passage again in the
+                                                  book.
+
+  As a registered user    I would like to add     so that I can preserve
+                          personal notes          my own thoughts about a
+                                                  quote.
+
+  As a registered user    I would like to view    so that I can revisit
+                          all of my saved quotes  my collection.
+
+  As a registered user    I would like to sort my so that I can browse
+                          quotes                  the collection in a
+                                                  useful order.
+
+  As a registered user    I would like to edit a  so that I can correct
+                          saved quote             mistakes or update its
+                                                  information.
+
+  As a registered user    I would like to delete  so that I can remove
+                          a quote                 material I no longer
+                                                  want to keep.
+
+  As a registered user    I would like to shuffle so that I can
+                          my saved quotes         rediscover material I
+                                                  may have forgotten.
+
+  As a registered user    I would like my quotes  so that my collection
+                          to remain separate from remains personal.
+                          other users' quotes     
+
+  As a user               I would like the site   so that I can use it on
+                          to work on different    desktop, tablet or
+                          screen sizes            mobile.
+  -----------------------------------------------------------------------
 
 ## Features
 
-⚠️ INSTRUCTIONS ⚠️
-
-In this section, you should go over the different parts of your project, and describe each feature. You should explain what value each of the features provides for the user, focusing on your target audience, what they want to achieve, and how your project can help them achieve these things.
-
-**IMPORTANT**: Remember to always include a screenshot of each individual feature!
-
-⚠️ --- END --- ⚠️
-
 ### Existing Features
 
-| Feature | Notes | Screenshot |
-| --- | --- | --- |
-| Register | Authentication is handled by allauth, allowing users to register accounts. | ![screenshot](documentation/features/register.png) |
-| Login | Authentication is handled by allauth, allowing users to log in to their existing accounts. | ![screenshot](documentation/features/login.png) |
-| Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot](documentation/features/logout.png) |
-| Blog List | The homepage displays basic information about blog posts, including image, title, author, date, and a brief excerpt. | ![screenshot](documentation/features/blog-list.png) |
-| View Post | Users can view the full blog post details, including any comments. | ![screenshot](documentation/features/view-post.png) |
-| Pagination | Blog posts are displayed in pages, with six posts per page. This provides better navigation for users through the post list. | ![screenshot](documentation/features/pagination.png) |
-| Add Comments | Authenticated visitors can comment on blog posts; comments require approval before being published. | ![screenshot](documentation/features/add-comment.png) |
-| Edit Comments | Authenticated visitors can edit their own comments. | ![screenshot](documentation/features/edit-comment.png) |
-| Delete Comments | Authenticated visitors can delete their own comments. | ![screenshot](documentation/features/delete-comment.png) |
-| Comment Approvals | Admins can approve or disapprove comments submitted by users before they are visible on the blog post. | ![screenshot](documentation/features/comment-approval.png) |
-| Create Post | Site owners can create/publish blog posts, including setting a featured image using Cloudinary, all from the Django admin dashboard. | ![screenshot](documentation/features/create-post.png) |
-| Update Post | Site owners can update/manage blog posts from the Django admin dashboard. | ![screenshot](documentation/features/update-post.png) |
-| Delete Post | Site owners can delete blog posts from the Django admin dashboard. | ![screenshot](documentation/features/delete-post.png) |
-| About Page | The About page displays the latest information about the site author, along with the option for visitors to send collaboration requests. | ![screenshot](documentation/features/about.png) |
-| Collaboration Requests | Visitors can submit collaboration requests from the *About* page, which are later reviewed by the admin. | ![screenshot](documentation/features/collaboration.png) |
-| User Feedback | Clear and obvious Django messages are used to provide feedback to user actions. | ![screenshot](documentation/features/messages.png) |
-| Heroku Deployment | The site is fully deployed to Heroku, making it accessible online and easy to manage. | ![screenshot](documentation/features/heroku.png) |
-| 404 | The 404 error page will indicate when a user has navigated to a page that doesn't exist, replacing the default Heroku 404 page with one that ties into the site's look and feel. | ![screenshot](documentation/features/404.png) |
+  -------------------------------------------------------------------------------------------
+  Feature                 Notes                   Suggested Screenshot
+  ----------------------- ----------------------- -------------------------------------------
+  Landing Page            Introduces Cornered     `documentation/features/landing.png`
+                          Wisdom to               
+                          unauthenticated         
+                          visitors and provides   
+                          clear registration and  
+                          login actions.          
+
+  Register                Uses Django's           `documentation/features/register.png`
+                          authentication system   
+                          and `UserCreationForm`  
+                          to create accounts.     
+
+  Login                   Allows existing users   `documentation/features/login.png`
+                          to authenticate using   
+                          Django's built-in       
+                          authentication views.   
+
+  Logout                  Provides a POST-based   `documentation/features/logout.png`
+                          logout action protected 
+                          with CSRF tokens.              
+
+  Home / Featured Quote   Shows a quote from the  `documentation/features/home.png`
+                          logged-in user's own    
+                          collection as the       
+                          central focus of the    
+                          page.                   
+
+  Shuffle Quote           Uses JavaScript to `documentation/features/shuffle.png`
+                          request another quote   
+                          without a full-page     
+                          refresh and avoids      
+                          repeating the current   
+                          quote where possible.   
+
+  Add Quote               Allows users to save    `documentation/features/add-quote.png`
+                          quote text, book title, 
+                          optional author,        
+                          optional page number    
+                          and notes.              
+
+  My Quotes               Displays the            `documentation/features/my-quotes.png`
+                          authenticated user's    
+                          saved quote collection. 
+
+  Sorting                 Quotes can be ordered   `documentation/features/sorting.png`
+                          by newest, oldest, book 
+                          or author.              
+
+  Edit Quote              Allows users to update  `documentation/features/edit-quote.png`
+                          one of their existing   
+                          quotes and its          
+                          associated information. 
+
+  Delete Quote            Provides a confirmation `documentation/features/delete-quote.png`
+                          page before a quote is  
+                          permanently deleted.    
+
+  Validation              Quote text and book     `documentation/features/validation.png`
+                          title are required;     
+                          page number is optional 
+                          but must be 1 or        
+                          greater when supplied.
+                          This applies to quote creation
+                           and editing 
+
+  User-specific Data      Quote queries are       `documentation/features/my-quotes.png`
+                          filtered by the         
+                          logged-in user so users 
+                          work with their own     
+                          collections.            
+
+  Responsive Design       Media queries adapt the `documentation/features/responsive.png`
+                          manuscript/book layout  
+                          for desktop, tablet and 
+                          mobile screens.         
+
+  Favicon / Branding      A classical temple and  `documentation/features/favicon.png`
+                          open-book emblem is     
+                          used for the logo and   
+                          favicon.                
+
+  Heroku Deployment       The production          `documentation/features/heroku.png`
+                          application is deployed 
+                          and accessible through  
+                          Heroku.                 
+  -------------------------------------------------------------------------------------------
 
 ### Future Features
 
-⚠️ INSTRUCTIONS ⚠️
+-   **Search** --- search saved quotes by quotation text, book or
+    author.
 
-Do you have additional ideas that you'd like to include on your project in the future? Fantastic, list them here! It's always great to have plans for future improvements. Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-A few examples are listed below to align with possible ways to improve on the sample walkthrough project, to give you some inspiration.
-
-⚠️ --- END ---⚠️
-
-- **Post Categories/Tags**: Allow users to categorize and tag blog posts, making it easier for visitors to filter content based on their interests.
-- **Post Search Functionality**: Add a search bar for users to quickly find posts by keywords or phrases.
-- **Post Likes/Dislikes or Upvotes**: Implement a "like" or "upvote" system for blog posts to encourage user engagement and give feedback to the author.
-- **User Profiles**: Create personalized user profiles where authenticated users can view their comments, liked posts, and account information.
-- **Comment Replies & Threads**: Enable users to reply to comments, creating nested comment threads for better discussions.
-- **Post Sharing**: Add social media sharing buttons (e.g., Twitter, Facebook, LinkedIn) for users to share blog posts.
-- **Notifications**: Implement a notification system that alerts users when their comments are approved, when new comments are made on a post they've commented on, or when new posts are published.
-- **Email Subscriptions**: Allow users to subscribe to receive email notifications for new posts, updates, or newsletters.
-- **Post Analytics**: Provide post authors with analytics such as views, time spent reading, and engagement rates.
-- **Multilingual Support**: Add the ability to write and view blog posts in multiple languages, broadening the audience.
-- **Related Posts Recommendations**: Show related posts at the bottom of a blog post to encourage further reading and keep users engaged.
-- **Content Flagging/Reporting**: Allow users to flag or report inappropriate content (comments or posts) for moderation.
-- **SEO Optimization**: Implement features for SEO, such as meta tags, custom URLs, and keywords for better search engine ranking.
-- **User Dashboard**: Provide users with a dashboard to track their activity, such as comments made, likes received, and blog posts they’ve interacted with.
-- **Admin Dashboard Analytics**: Provide site admins with an analytics dashboard showing user activity, popular posts, most commented articles, etc.
-- **Custom Themes for Users**: Allow users to customize the visual theme of the site (colors, fonts, etc.) to suit their preferences.
+-   **OCR Quote Capture** --- photograph a page and extract quote text
+    to reduce manual typing.
+-   **Mobile Application** --- provide a dedicated mobile experience.
+-   **Home-screen Widget** --- surface a saved quote periodically 
+    that can also be shuffled with a toggle
+    without requiring the user to open the application.
+-   **Favourite Quotes** --- mark particularly important quotations for
+    quicker access.
+-   **Improved Filtering** --- combine sorting with filters for books,
+    authors or tags.
+-   **Additional Accessibility Testing** --- continue refining contrast,
+    keyboard navigation and responsive behaviour.
 
 ## Tools & Technologies
 
-| Tool / Tech | Use |
-| --- | --- |
-| [![badge](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
-| [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
-| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage. |
-| [![badge](https://img.shields.io/badge/VSCode-grey?logo=htmx&logoColor=007ACC)](https://code.visualstudio.com) | Local IDE for development. |
-| [![badge](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) | Main site content and layout. |
-| [![badge](https://img.shields.io/badge/CSS-grey?logo=css&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) | Design and layout. |
-| [![badge](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) | User interaction on the site. |
-| [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end programming language. |
-| [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
-| [![badge](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) | Python framework for the site. |
-| [![badge](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) | Relational database management. |
-| [![badge](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) | Serving static files with Heroku. |
-| [![badge](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) | Creating wireframes. |
-| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
-| [![badge](https://img.shields.io/badge/Copilot-grey?logo=githubcopilot&logoColor=##000000)](https://github.com/copilot) | Help debug, troubleshoot, and explain things. |
+  -----------------------------------------------------------------------
+  Tool / Technology                   Use
+  ----------------------------------- -----------------------------------
+  Git                                 Version control throughout
+                                      development.
 
-⚠️ NOTE ⚠️
+  GitHub                              Remote repository, commit history
+                                      and project management.
 
-Want to add more?
+  VS Code                             Local development environment.
 
-- Tutorial: https://shields.io/badges/static-badge
-- Icons/Logos: https://simpleicons.org
-  - FYI: not all logos are available to use
+  HTML                                Page structure and Django
+                                      templates.
 
-🛑 --- END --- 🛑
+  CSS                                 Old-book visual design, forms and
+                                      responsive layouts.
+
+  JavaScript                          Asynchronous quote shuffle
+                                      functionality.
+
+  Python                              Back-end programming language.
+
+  Django                              Main web framework, ORM, templates
+                                      and authentication.
+
+  SQLite                              Local development database.
+
+  PostgreSQL                          Production relational database.
+
+  Heroku                              Hosting and automatic deployment.
+
+  Gunicorn                            Production WSGI server.
+
+  WhiteNoise                          Serving static files in the
+                                      deployed application.
+
+  dj-database-url                     Database configuration using the
+                                      `DATABASE_URL` environment
+                                      variable.
+
+  GitHub Copilot                      Development assistance and code
+                                      suggestions.
+
+  ChatGPT                             Development assistance, 
+                                            image generation
+
+                                        debugging,
+                                      explanations and design iteration.
+ 
+   Balsamiq                      wireframes.
+
+    https://randomkeygen.com/                             Secret key generation.
+
+
+  -----------------------------------------------------------------------
+
 
 ## Database Design
 
 ### Data Model
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models. Understanding the relationships between different tables can save time later in the project.
+Cornered Wisdom uses Django's built-in `User` model together with two
+application models: `Book` and `Quote`.
 
-![screenshot](documentation/erd.png)
+-   A **User** can numerous quotes.
+-   A **Book** can have many quotes.
+-   Each **Quote** belongs to one user and one book.
+-   Deleting a user deletes that user's quotes through `CASCADE`.
+-   Deleting a book deletes quotes related to that book through
+    `CASCADE`.
 
-⚠️ INSTRUCTIONS ⚠️
-
-Using your defined models, create an ERD with the relationships identified. A couple of recommendations for building your own free ERDs:
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
-- [Draw.io](https://draw.io)
-
-Looking for an interactive version of your ERD? Consider using a [`Mermaid flowchart`](https://mermaid.live). To simplify the process, you can ask ChatGPT (or similar) the following prompt:
-
-> ChatGPT Prompt:  
-> "Generate a Markdown syntax Mermaid ERD using my Django models"  
-> [paste-your-django-models-into-ChatGPT]
-
-The "I Think Therefore I Blog" sample ERD in Markdown syntax using Mermaid can be seen below as an example.
-
-**NOTE**: A Markdown Preview tool doesn't show the interactive ERD; you must first commit/push the code to your GitHub repository in order to see it live in action.
-
-⚠️ --- END --- ⚠️
-
-I have used `Mermaid` to generate an interactive ERD of my project.
-
-```mermaid
+``` mermaid
 erDiagram
-    USER ||--o{ POST : "authors"
-    USER ||--o{ COMMENT : "commenters"
-    POST ||--o{ COMMENT : "has"
-    POST {
+    USER ||--o{ QUOTE : "owns"
+    BOOK ||--o{ QUOTE : "contains"
+
+    BOOK {
         string title
-        string slug
-        cloudinary featured_image
-        text content
-        text excerpt
-        datetime created_on
-        datetime updated_on
-        int status
+        string author
     }
-    COMMENT {
-        text body
-        datetime created_on
-        bool approved
-    }
-    ABOUT {
-        string title
-        cloudinary profile_image
-        text content
-        datetime updated_on
-    }
-    COLLABORATEREQUEST {
-        string name
-        string email
-        text message
-        bool read
+
+    QUOTE {
+        text text
+        int page_number
+        text notes
+        datetime created_at
     }
 ```
 
-source: [Mermaid](https://mermaid.live/edit#pako:eNqNUstuwjAQ_BVrz6EiVIiSG21zg9LyuFSRkImXxGpsR45TkQb-vU4C5REq4Yut2dnZnfWWECqG4AHqV04jTUUgiT3LuT8ju12no0ryPp0viEcCoLmJlc4CaHNeppOJ_9bQQiUESoMnZq1wgxnTS0rZvKuTGc1lRAw3CbbQLMmjExgmKmdcUl2QDVKTa2QrLmh0lmdwa0iobFPSXKG4DVGnZyijBg0XSEJt1ayWkjeCecpaQS6N7dB2kDXYvrmOjsurymvFijvLrpVKCE1Trb6RXYiPnqfLOwZ3NiMrsuEJ3jeif_3-eRuPbQuz0cKf-R9L_-YnSiraf4iC8uSqvMAsu2iq9m3ncfQMDgjUNpPZla0LBWBitPJQ7ROj-qtaqIpnl1XNCxmCZ3SODjQGDksO3oYmmUVTKsErYQue-zR8cN2B2-t3h73BY2_Qd6AAr7t34Ecpm-HW7M_63UhqlUfxQWr_C_zI_7I)
+### Model Fields
 
-⚠️ RECOMMENDED ⚠️
+**Book**
 
-Alternatively, or in addition to, a more comprehensive ERD can be auto-generated once you're at the end of your development stages, just before you submit. Follow the steps below to obtain a thorough ERD that you can include. Feel free to leave the steps below in the README for future use to yourself.
+-   `title` --- `CharField(max_length=255)`.
+-   `author` --- `CharField(max_length=255, blank=True)`; author is
+    intentionally optional.
 
-⚠️ --- END --- ⚠️
+**Quote**
 
-I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
-
-The steps taken were as follows:
-- In the terminal: `sudo apt update`
-- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
-- then type `Y` to proceed
-- then: `pip3 install django-extensions pygraphviz`
-- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
-```python
-INSTALLED_APPS = [
-    ...
-    'django_extensions',
-    ...
-]
-```
-- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
-- drag the new `erd.png` file into my `documentation/` folder
-- removed `'django_extensions',` from my `INSTALLED_APPS`
-- finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
-
-![screenshot](documentation/advanced-erd.png)
-
-source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
+-   `user` --- foreign key to Django's `User`.
+-   `book` --- foreign key to `Book`, with `related_name="quotes"`.
+-   `text` --- quote content.
+-   `page_number` --- optional positive integer.
+-   `notes` --- optional text.
+-   `created_at` --- automatically records when the quote was created.
 
 ## Agile Development Process
 
-### GitHub Projects
+### GitHub Projects and Issues
 
-⚠️ TIP ⚠️
+GitHub was used alongside Git for iterative development. Features were
+implemented incrementally, tested, committed and pushed throughout the
+project. Development was organised around user-facing functionality such
+as authentication, quote CRUD operations, sorting, shuffle behaviour,
+deployment and styling.
 
-Consider adding screenshots of your Projects Board(s), Issues (open and closed), and Milestone tasks.
+GitHub Issues and a project board were used during development,
+screenshots are stored in `documentation/`  as evidence
+of the planning process.
 
-⚠️ --- END ---⚠️
+### MoSCoW Prioritisation
 
-[GitHub Projects](https://www.github.com/nasim-orion/cornered_wisdom/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
+MoSCoW prioritisation helped separate essential functionality from
+enhancements.
 
-![screenshot](documentation/gh-projects.png)
+**Must Have**
 
-### GitHub Issues
+-   User registration, login and logout.
+-   Create quotes.
+-   Read/view saved quotes.
+-   Edit quotes.
+-   Delete quotes.
+-   User-specific quote ownership and access.
+-   Required-field and page-number validation.
+-   A deployed working application.
 
-[GitHub Issues](https://www.github.com/nasim-orion/cornered_wisdom/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
+**Should Have**
 
-| Link | Screenshot |
-| --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues-search/nasim-orion/cornered_wisdom?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/nasim-orion/cornered_wisdom/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ![screenshot](documentation/gh-issues-open.png) |
-| [![GitHub closed issues](https://img.shields.io/github/issues-search/nasim-orion/cornered_wisdom?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/nasim-orion/cornered_wisdom/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](documentation/gh-issues-closed.png) |
+-   Random quote display.
+-   Shuffle functionality.
+-   Responsive styling.
+-   Clear landing page and consistent visual identity.
 
-### MoSCoW Prioritization
+**Could Have**
 
-I've decomposed my Epics into User Stories for prioritizing and implementing them. Using this approach, I was able to apply "MoSCoW" prioritization and labels to my User Stories within the Issues tab.
+-   Sorting by newest, oldest, book and author.
+-   Additional visual polish and decorative branding.
 
-- **Must Have**: guaranteed to be delivered - required to Pass the project (*max ~60% of stories*)
-- **Should Have**: adds significant value, but not vital (*~20% of stories*)
-- **Could Have**: has small impact if left out (*the rest ~20% of stories*)
-- **Won't Have**: not a priority for this iteration - future features
+**Won't Have in this iteration**
 
+-   OCR photo-to-text quote capture.
+-   Dedicated mobile application.
+-   Mobile/home-screen quote widget.
+-   Advanced search, filtering and tagging.
+-   User profiles.
 ## Testing
 
-> [!NOTE]  
-> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+Full manual and validation testing is documented separately in
+[TESTING.md](TESTING.md).
+
+Testing during development covered authentication, CRUD operations,
+user-specific data access, validation, sorting, asynchronous shuffle
+behaviour, static files, deployment and responsive layouts. The deployed
+application was also inspected using browser device emulation across
+phone and tablet viewport sizes.
 
 ## Deployment
 
-The live deployed application can be found deployed on [Heroku](https://cornered-wisdom-0c18133950ec.herokuapp.com).
+The live application is deployed on Heroku:
+
+https://cornered-wisdom-0c18133950ec.herokuapp.com/
 
 ### Heroku Deployment
 
-This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+The application uses a `Procfile` containing:
 
-Deployment steps are as follows, after account setup:
-
-- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
-- Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click **Create App**.
-- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables to match your private `env.py` file.
-
-> [!IMPORTANT]  
-> This is a sample only; you would replace the values with your own if cloning/forking my repository.
-
-🛑 !!! ATTENTION nasim-orion !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-⚠️ Replace the keys below with your own actual keys used; example: if not using Cloudinary, then remove those keys, or replace with whatever ones you're using. ⚠️
-
-🛑 --- END --- 🛑
-
-| Key | Value |
-| --- | --- |
-| `CLOUDINARY_URL` | user-inserts-own-cloudinary-url |
-| `DATABASE_URL` | user-inserts-own-postgres-database-url |
-| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-| `SECRET_KEY` | any-random-secret-key |
-
-Heroku needs some additional files in order to deploy properly.
-
-- [requirements.txt](requirements.txt)
-- [Procfile](Procfile)
-- [.python-version](.python-version)
-
-You can install this project's **[requirements.txt](requirements.txt)** (*where applicable*) using:
-
-- `pip3 install -r requirements.txt`
-
-If you have your own packages that have been installed, then the requirements file needs updated using:
-
-- `pip3 freeze --local > requirements.txt`
-
-The **[Procfile](Procfile)** can be created with the following command:
-
-- `echo web: gunicorn app_name.wsgi > Procfile`
-- *replace `app_name` with the name of your primary Django app name; the folder where `settings.py` is located*
-
-The **[.python-version](.python-version)** file tells Heroku the specific version of Python to use when running your application.
-
-- `3.12` (or similar)
-
-For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
-
-Either (*recommended*):
-
-- Select **Automatic Deployment** from the Heroku app.
-
-Or:
-
-- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
-- Set the remote for Heroku: `heroku git:remote -a app_name` (*replace `app_name` with your app name*)
-- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
-	- `git push heroku main`
-
-The project should now be connected and deployed to Heroku!
-
-### PostgreSQL
-
-This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net) for the Relational Database with Django.
-
-> [!CAUTION]
-> - PostgreSQL databases by Code Institute are only available to CI Students.
-> - You must acquire your own PostgreSQL database through some other method if you plan to clone/fork this repository.
-> - Code Institute students are allowed a maximum of 8 databases.
-> - Databases are subject to deletion after 18 months.
-
-To obtain my own Postgres Database from Code Institute, I followed these steps:
-
-- Submitted my email address to the CI PostgreSQL Database link above.
-- An email was sent to me with my new Postgres Database.
-- The Database connection string will resemble something like this:
-    - `postgres://<db_username>:<db_password>@<db_host_url>/<db_name>`
-- You can use the above URL with Django; simply paste it into your `env.py` file and Heroku Config Vars as `DATABASE_URL`.
-
-### WhiteNoise
-
-This project uses the [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/) to aid with static files temporarily hosted on the live Heroku site.
-
-To include WhiteNoise in your own projects:
-
-- Install the latest WhiteNoise package:
-    - `pip install whitenoise`
-- Update the `requirements.txt` file with the newly installed package:
-    - `pip freeze --local > requirements.txt`
-- Edit your `settings.py` file and add WhiteNoise to the `MIDDLEWARE` list, above all other middleware (apart from Django’s "SecurityMiddleware"):
-
-```python
-# settings.py
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    # any additional middleware
-]
+``` text
+web: gunicorn cornered_wisdom.wsgi
 ```
 
+The project also includes `requirements.txt` and `.python-version` for
+the deployment environment.
+
+The production database is configured from the `DATABASE_URL`
+environment variable using `dj-database-url`. The Django `SECRET_KEY` is
+stored as an environment/config variable rather than committed to the
+repository.
+
+Static files are served using WhiteNoise. `collectstatic` is run for
+deployment and generated `staticfiles/` output is not committed to
+source control.
+
+The project is connected to GitHub for automatic Heroku deployment,
+allowing updates pushed to the deployment branch to be built and
+released automatically.
+
+### Environment Variables
+
+Any developer cloning the project should create their own local
+environment configuration and must not commit secret values.
+
+Example:
+
+``` python
+import os
+
+os.environ.setdefault("SECRET_KEY", "your-own-secret-key")
+os.environ.setdefault("DATABASE_URL", "your-own-database-url")
+```
 
 ### Local Development
 
-This project can be cloned or forked in order to make a local copy on your own system.
+Clone the repository:
 
-For either method, you will need to install any applicable packages found within the [requirements.txt](requirements.txt) file.
-
-- `pip3 install -r requirements.txt`.
-
-You will need to create a new file called `env.py` at the root-level, and include the same environment variables listed above from the Heroku deployment steps.
-
-> [!IMPORTANT]  
-> This is a sample only; you would replace the values with your own if cloning/forking my repository.
-
-🛑 !!! ATTENTION nasim-orion !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-⚠️ Replace the keys below with your own actual keys used; example: if not using Cloudinary | AWS, then replace those keys with whatever keys you're using. ⚠️
-
-🛑 --- END --- 🛑
-
-Sample `env.py` file:
-
-```python
-import os
-
-os.environ.setdefault("SECRET_KEY", "any-random-secret-key")
-os.environ.setdefault("DATABASE_URL", "user-inserts-own-postgres-database-url")
-os.environ.setdefault("CLOUDINARY_URL", "user-inserts-own-cloudinary-url")  # only if using Cloudinary
-
-# local environment only (do not include these in production/deployment!)
-os.environ.setdefault("DEBUG", "True")
+``` bash
+git clone https://www.github.com/nasim-orion/cornered_wisdom.git
+cd cornered_wisdom
 ```
 
-Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+Create and activate a virtual environment, then install the
+dependencies:
 
-- Start the Django app: `python3 manage.py runserver`
-- Stop the app once it's loaded: `CTRL+C` (*Windows/Linux*) or `⌘+C` (*Mac*)
-- Make any necessary migrations: `python3 manage.py makemigrations --dry-run` then `python3 manage.py makemigrations`
-- Migrate the data to the database: `python3 manage.py migrate --plan` then `python3 manage.py migrate`
-- Create a superuser: `python3 manage.py createsuperuser`
-- Load fixtures (*if applicable*): `python3 manage.py loaddata file-name.json` (*repeat for each file*)
-- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+``` bash
+pip install -r requirements.txt
+```
 
-If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
+Apply migrations:
 
-- `python3 manage.py dumpdata your-model > your-model.json`
-- *repeat this action for each model you wish to backup*
-- **NOTE**: You should never make a backup of the default *admin* or *users* data with confidential information.
+``` bash
+python manage.py migrate
+```
+
+Run the development server:
+
+``` bash
+python manage.py runserver
+```
+
+The local development server will normally be available at
+`http://127.0.0.1:8000/`.
+
+### Local vs Deployment
+
+The same core application and interface are used locally and on Heroku.
+During development, deployment-specific issues included configuring the
+correctly named `Procfile`, enabling the web process, configuring
+WhiteNoise/static files and ensuring environment-based database settings
+were used. These were resolved with the use of AI so that the deployed application now
+reflects the intended project functionality.
+
+## Credits
+
+### Content and Development Resources
+
+  -----------------------------------------------------------------------
+  Source                              Notes
+  ----------------------------------- -----------------------------------
+  Django Documentation                Reference for Django framework
+                                      behaviour, authentication, models,
+                                      views and templates.
+
+  WhiteNoise Documentation            Guidance for serving static files
+                                      in production.
+
+  Heroku Documentation                Deployment and application
+                                      configuration.
+
+  GitHub                              Source control and repository
+                                      hosting.
+
+  ChatGPT                             Assistance with code explanations,
+                                      debugging, responsive CSS, project
+                                      documentation and design iteration.
+
+  GitHub Copilot                      Code suggestions during
+                                      development.
+  -----------------------------------------------------------------------
+
+### Media
+
+The project's principal visual assets --- including the parchment/book
+backgrounds, classical temple/open-book branding and favicon artwork ---
+were generated with OpenAI image-generation assistance specifically for
+Cornered Wisdom.
+
+The project uses these images from `home/static/home/images/`:
+
+-   `body-image.png` --- parchment/book background with floral
+    border.
+-   `landing.png` --- leather book-cover background for the public
+    landing page.
+-   `logo.png` --- classical temple/open-book logo used within the
+    application.
+-   `favicon.png` --- simplified favicon version of the branding.
+-   `paper-texture.png` --- parchment texture.
+-   `quote-paper-texture.png` --- lighter texture used behind displayed
+    quotes.
+
+If any additional third-party images are added before submission, their
+original source and usage should also be credited here.
+
+### Acknowledgements
+
+I would like to thank the staff at Code institute for their time and learning resources that supported
+me during the development of Cornered Wisdom, particularly those who
+provided guidance, debugging support and feedback while I developed my
+understanding of Django and full-stack web development. I would also like to thank the rest of the members of the cohort for helping with debugging and providing moral support.
+
 
 #### Cloning
 
@@ -592,92 +708,15 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 ### Local VS Deployment
 
-⚠️ INSTRUCTIONS ⚠️
 
-Use this space to discuss any differences between the local version you've developed, and the live deployment site. Generally, there shouldn't be [m]any major differences, so if you honestly cannot find any differences, feel free to use the following example:
 
-⚠️ --- END --- ⚠️
 
-There are no remaining major differences between the local version when compared to the deployed version online.
+- There are no  major differences between the local version when compared to the deployed version online.
 
-## Credits
 
-⚠️ INSTRUCTIONS ⚠️
+ ### END 
 
-In the following sections, you need to reference where you got your content, media, and any extra help. It is common practice to use code from other repositories and tutorials (which is totally acceptable), however, it is important to be very specific about these sources to avoid potential plagiarism.
+- I would like to give special thanks to my Code Institute masterclass coach, [Tim Nelson](https://www.github.com/TravelTimN), as well as cohort facilitator Marko for the support and understanding throughout the development of this project.
 
-⚠️ --- END ---⚠️
-
-### Content
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links for any borrowed code snippets, elements, and resources. Ideally, you should provide an actual link to every resource used, not just a generic link to the main site. If you've used multiple components from the same source (such as Bootstrap), then you only need to list it once, but if it's multiple Codepen samples, then you should list each example individually. If you've used AI for some assistance (such as ChatGPT or Perplexity), be sure to mention that as well. A few examples have been provided below to give you some ideas.
-
-Eventually you'll want to learn how to use Git branches. Here's a helpful tutorial called [Learn Git Branching](https://learngitbranching.js.org) to bookmark for later.
-
-⚠️ --- END ---⚠️
-
-| Source | Notes |
-| --- | --- |
-| [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | "How to Write a Git Commit Message" |
-| [I Think Therefore I Blog](https://codeinstitute.net) | Code Institute walkthrough project inspiration |
-| [Bootstrap](https://getbootstrap.com) | Various components / responsive front-end framework |
-| [Cloudinary API](https://cloudinary.com) | Cloud storage for static/media files |
-| [Whitenoise](https://whitenoise.readthedocs.io) | Static file service |
-| [Python Tutor](https://pythontutor.com) | Additional Python help |
-| [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
-
-### Media
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links to any media files borrowed from elsewhere (images, videos, audio, etc.). If you're the owner (or a close acquaintance) of some/all media files, then make sure to specify this information. Let the assessors know that you have explicit rights to use the media files within your project. Ideally, you should provide an actual link to every media file used, not just a generic link to the main site, unless it's AI-generated artwork.
-
-Looking for some media files? Here are some popular sites to use. The list of examples below is by no means exhaustive.
-
-- Images
-    - [Pexels](https://www.pexels.com)
-    - [Unsplash](https://unsplash.com)
-    - [Pixabay](https://pixabay.com)
-    - [Lorem Picsum](https://picsum.photos) (placeholder images)
-    - [Wallhere](https://wallhere.com) (wallpaper / backgrounds)
-    - [This Person Does Not Exist](https://thispersondoesnotexist.com) (reload to get a new person)
-- Audio
-    - [Audio Micro](https://www.audiomicro.com/free-sound-effects)
-    - [Button Clicks](https://www.zapsplat.com/sound-effect-category/button-clicks)
-    - [Lasers & Weapons](https://www.zapsplat.com/sound-effect-category/lasers-and-weapons/page/5)
-    - [Puzzle Music](https://soundimage.org/puzzle-music)
-    - [Camtasia Audio](https://library.techsmith.com/camtasia/assets/Audio)
-- Video
-    - [Videvo](https://www.videvo.net)
-- Image Compression
-    - [TinyPNG](https://tinypng.com) (for images <5MB)
-    - [CompressPNG](https://compresspng.com) (for images >5MB)
-
-A few examples have been provided below to give you some ideas on how to do your own Media credits.
-
-⚠️ --- END ---⚠️
-
-| Source | Notes |
-| --- | --- 
-| 
-| [ChatGPT](https://openai.com/index/dall-e-3) | AI generated artwork and background images and troubleshooting |
-| [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
-| [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
-| [CloudConvert](https://cloudconvert.com/webp-converter) | Converting images to `.webp` |
-
-### Acknowledgements
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution and acknowledgement to any supports that helped, encouraged, or supported you throughout the development stages of this project. It's always lovely to appreciate those that help us grow and improve our developer skills. A few examples have been provided below to give you some ideas.
-
-⚠️ --- END ---⚠️
-
-- I would like to thank my Code Institute masterclass coach, [Tim Nelson](https://www.github.com/TravelTimN) for the support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) and [Code Institute Discord community](https://discord-portal.codeinstitute.net) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
 
 
