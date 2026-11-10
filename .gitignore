@@ -1,7 +1,28 @@
+# Virtual environments
 .venv/
+venv/
+env/
+
+# Environment variables and secrets
 env.py
+.env
+.env.*
 
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
 
+# Django generated files
 staticfiles/
+media/
+
+# Local databases
+db.sqlite3
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
